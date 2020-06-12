@@ -13,7 +13,7 @@
 
 html
 {
-    font-size: 62.5%;   /* decreased ram to 10px (same as font-size)*/
+    font-size: 62.5%;   /* decreased rem to 10px*/
 }
 
 :root /* define global variables */
@@ -37,6 +37,7 @@ html
     background-color: var(--secondary-color);   /*use variable*/
     margin: 3.5rem;
     box-shadow: 0 1rem 3rem var(--grey-color);
+    overflow: hidden;
 }
 
 /*viewport is a visible area of a web page */
@@ -44,8 +45,10 @@ html
 {
     width: 100%;
     height: calc(100vh - 7rem);  /*100vh = 100% viewport, 7rem = 2 margins (top and bottom)*/
-    background: linear-gradient(rgba(18,113,255, 0.5), rgba(18,113,255, 0.3)), url(../img/header-bg.jpg) center no-repeat;
+    background: linear-gradient(rgba(18,113,255, 0.5), rgba(18,113,255, 0.0)), url(../img/header-bg.jpg) center no-repeat;
     background-size: cover;
+    position: relative;
+    perspective: 100rem;
 }
 
 .header-text
@@ -69,4 +72,139 @@ html
     color: var(--secondary-color);
     max-width: 70rem;
     margin: auto;
+}
+
+.logo
+{
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+}
+
+.logo h1
+{
+    display: flex;
+}
+
+.logo h1 span
+{
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    background-color: var(--white-color);
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0.5rem;
+    border-radius: 50%;
+}
+
+.logo h1 span:nth-child(1)
+{
+    /* animation-name: drop-letters;
+    animation-duration: 5s;
+    animation-delay: .1s;
+    animation-iteration-count: infinite; */
+
+    animation: drop-letters 5s .1s infinite;    /*same as above*/
+}
+
+.logo h1 span:nth-child(2)
+{
+    animation: drop-letters 5s .2s infinite; 
+} 
+
+.logo h1 span:nth-child(3)
+{
+    animation: drop-letters 5s .3s infinite; 
+} 
+
+.logo h1 span:nth-child(4)
+{
+    animation: drop-letters 5s .4s infinite; 
+} 
+
+.logo h1 span:nth-child(5)
+{
+    animation: drop-letters 5s .5s infinite; 
+} 
+
+.logo h1 span:nth-child(6)
+{
+    animation: drop-letters 5s .6s infinite; 
+} 
+
+.logo h1 span:nth-child(7)
+{
+    animation: drop-letters 5s .7s infinite; 
+} 
+
+.header-image
+{
+    width: 35%;
+    animation: image-float 150s infinite; /*no delay here*/
+}
+
+@keyframes drop-letters
+{
+    from
+    {
+        transform: translateY(0);
+    }
+
+    10%
+    {
+        transform: translateY(0);
+    }
+
+    15%
+    {
+        transform: translateY(-100%);
+    }
+
+    20%
+    {
+        transform: translateY(0);
+    }
+
+    to
+    {
+        transform: translateY(0);
+    }
+}
+
+@keyframes image-float
+{
+    from
+    {
+        transform: translateZ(40rem); /* '+' closer, '-' further*/
+        opacity: 1;
+    }
+
+    40%
+    {
+        transform: translateZ(-500rem)
+        translateX(150rem);
+        opacity: .8;
+    }
+
+    70%
+    {
+        transform: translateZ(-1500rem)
+        translateX(800rem);
+        opacity: .6;
+    }
+
+    80%
+    {
+        transform: translateZ(-50rem)
+        translateX(100rem);
+        opacity: .8;
+    }
+    
+    to
+    {
+        transform: translateZ(40rem);
+        opacity: 1;
+    }
 }
