@@ -589,3 +589,44 @@ html
     }
 }
 /* CONTACT FORM END */
+
+
+/*FOOTER*/
+    footer
+    {
+        background-color: var(--grey-color);
+        padding: 4rem 0 2rem 0;
+    }
+
+    .footer-list
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-link
+    {
+        font-size: 2rem;
+        color: var(--white-color);
+        margin: 0 2rem;
+        background-color: var(--grey-color);
+        padding: .3rem 3rem;
+        letter-spacing: .3rem;
+        transition: .3s ease-out;
+    }
+
+    .footer-link:hover
+    {
+        transform: scale(1.2) rotate(5deg);
+        box-shadow: 0 2rem 3rem rgba(0,0,0,.8);
+    }
+
+    .footer-paragraph
+    {
+        text-align: center;
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+        letter-spacing: .2rem;
+        margin-top: 5rem;
+    }
+/*FOOTER END*/
