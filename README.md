@@ -9,9 +9,9 @@ https://theroadsite.netlify.app
 ## Tools 🔧
 * HTML
 * CSS
-  * keyframes
+  * Keyframes
   * 3D animations
-  * media queries
+  * Media queries
 * Java Script
 
 ## Screenshots 🔎
